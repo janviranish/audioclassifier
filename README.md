@@ -15,6 +15,11 @@ Trains k-NN classifier (k=5) with 80/20 train-test split
 
 Reports classification accuracy
 
+## Results
+Depending on how distinct the classes of sounds are, the accuracy varies. 
+
+I.e. very similar sounds could lead to slightly lower accuracy, and as high as 100% accuracy for distinct sounds like thunder, siren & traffic.
+
 ## Limitations
 Requires MATLAB Audio Toolbox
 
