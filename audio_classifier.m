@@ -1,5 +1,5 @@
 % Load and split data
-ads = audioDatastore("C:\Users\janvi\Downloads\environmental_sounds", ...
+ads = audioDatastore("C:\Users\xxxxx\environmental_sounds", ...
     "IncludeSubfolders", true, "LabelSource", "foldernames");
 [adsTrain, adsTest] = splitEachLabel(ads, 0.8, "randomized");
 
@@ -14,7 +14,6 @@ for i = 1:nTrain
     trainFeatures(i,:) = extract_features(x, fs);
 end
 
-% *** ADD THIS LINE - TRAIN THE MODEL ***
 mdl = fitcknn(trainFeatures, trainLabels, "NumNeighbors", 5, "Standardize", true);
 
 % Extract test features
@@ -43,4 +42,5 @@ function feat = extract_features(x, fs)
         "NumBands", 64);
     
     feat = mean(log10(S + 1e-6), 2).';
+
 end
